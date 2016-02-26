@@ -9,5 +9,5 @@
               <constructor-arg value="KAI"></constructor-arg>
        </bean>
 
-       <bean id="Tom" class="Student"></bean>
+       
 </beans>
