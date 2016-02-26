@@ -35,6 +35,7 @@ public class ComplexMatrix2x2Test {
         Assert.assertTrue(cm.getMas(0,0).getA()==cn1.getA()&&cm.getMas(0,0).getB()==cn1.getB()&&cm.getMas(0,1).getA()==cn2.getA()&&cm.getMas(0,1).getB()==cn2.getB());
 
     }
+    @Test
     public void methodAddShouldAddComplexMatrixesCorrectly(){
         ComplexNumber cn1 = mock(ComplexNumber.class);
         ComplexNumber cn2 = mock(ComplexNumber.class);

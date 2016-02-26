@@ -117,5 +117,7 @@ public double m[][] = new double[2][2];
         Matrix2x2 m1 = new Matrix2x2(1,2,3,4);
         System.out.println(-m1.m[1][0]*m1.m[0][1]);
         System.out.println(m1.det());
+        Matrix2x2 m2 = m1.inverse();
+        System.out.println(m2.m[0][0]+" "+m2.m[0][1]+" "+m2.m[1][0]+" "+m2.m[1][1]);
     }
 }

@@ -81,9 +81,10 @@ public class Matrix2x2Test {
         m1.transpon();
         Assert.assertTrue(m1.m[0][1]==3&&m1.m[1][0]==2);
     }
+    @Test
     public void inversehouldWorkCorrectly(){
         Matrix2x2 m1 = new Matrix2x2(1,2,3,4);
-        m1.inverse();
-        Assert.assertTrue(m1.m[0][0]==-2.0&&m1.m[0][1]==1.5&&m1.m[1][0]==1.0&&m1.m[1][1]==-0.5);
+        Matrix2x2 m2 = m1.inverse();
+        Assert.assertTrue(m2.m[0][0]==-2.0&&m2.m[0][1]==1.0&&m2.m[1][0]==1.5&&m2.m[1][1]==-0.5);
     }
 }
