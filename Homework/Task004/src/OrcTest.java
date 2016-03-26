@@ -10,5 +10,7 @@ public class OrcTest {
         Orc orc = new Orc("Shrek",500,1000,"black");
         Assert.assertTrue("Shrek".equals(orc.getName())&&500==orc.getAge()&&1000==orc.getWeight()&&"black".equals(orc.getColor()));
     }
-    
+    @Test
+    public void orcShouldEat(){}
+
 }

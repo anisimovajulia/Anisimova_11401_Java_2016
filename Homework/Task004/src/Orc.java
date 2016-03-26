@@ -56,8 +56,9 @@ public class Orc implements Alive,Orcs {
     }
 
     @Override
-    public void eat(Human human) {
+    public String eat(Human human) {
         human.setAlive(false);
         System.out.println("I ate "+human.getName());
+        return "I ate "+human.getName();
     }
 }

@@ -4,5 +4,5 @@
 public interface Orcs {
     void dieFromSun();
     void liveInCave();
-    void eat(Human human);
+    String eat(Human human);
 }

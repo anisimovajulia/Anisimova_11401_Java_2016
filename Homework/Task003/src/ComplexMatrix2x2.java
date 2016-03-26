@@ -34,10 +34,10 @@ public class ComplexMatrix2x2 {
     }
     public ComplexMatrix2x2 mult(ComplexMatrix2x2 a){
         ComplexMatrix2x2 m = new ComplexMatrix2x2();
-        m.mas[0][0]=mas[0][0].mult(a.mas[0][0]).add(mas[0][1].mult(a.mas[1][0]));
-        m.mas[0][1]=mas[0][0].mult(a.mas[0][1]).add(mas[0][1].mult(a.mas[1][1]));
-        m.mas[1][0]=mas[1][0].mult(a.mas[0][0]).add(mas[1][1].mult(a.mas[1][0]));
-        m.mas[1][1]=mas[1][0].mult(a.mas[0][1]).add(mas[1][1].mult(a.mas[1][1]));
+        m.mas[0][0]=(mas[0][0].mult(a.mas[0][0])).add(mas[0][1].mult(a.mas[1][0]));
+        m.mas[0][1]=(mas[0][0].mult(a.mas[0][1])).add(mas[0][1].mult(a.mas[1][1]));
+        m.mas[1][0]=(mas[1][0].mult(a.mas[0][0])).add(mas[1][1].mult(a.mas[1][0]));
+        m.mas[1][1]=(mas[1][0].mult(a.mas[0][1])).add(mas[1][1].mult(a.mas[1][1]));
         return m;
     }
     public ComplexNumber det(){

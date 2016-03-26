@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="bigEagle" class="Eagle">
+              <constructor-arg index="0" value="Клювокрыл"/>
+              <constructor-arg index="1" value="1000"/>
+       </bean>
+       <bean id="smallEagle" class="Eagle">
+              <constructor-arg index="0" value="Eagle"/>
+              <constructor-arg index="1" value="500"/>
+       </bean>
+       <bean id="eagle" class="Eagle">
+              <constructor-arg index="0" value="Gwaihir"/>
+              <constructor-arg index="1" value="700"/>
+       </bean>
+       <bean id="drowElf" class="DrowElf">
+              <constructor-arg index="0" value="Aragorn"/>
+              <constructor-arg index="1" value="5000"/>
+              <constructor-arg index="2" ref="bigEagle"/>
+              <constructor-arg index="3" value="2000"/>
+       </bean>
+       <bean id="lightElf" class="LightElf">
+              <constructor-arg index="0" value="Valar"/>
+              <constructor-arg index="1" value="500"/>
+              <constructor-arg index="2" ref="smallEagle"/>
+              <constructor-arg index="3" value="1000"/>
+       </bean>
+       <bean id="human" class="Human">
+              <constructor-arg index="0" value="Tolkin"/>
+              <constructor-arg index="1" value="400"/>
+       </bean>
+       <bean id="weapon" class="Weapon">
+              <constructor-arg index="0" value="Sword"/>
+              <constructor-arg index="1" value="100"/>
+       </bean>
+       <bean id="dwarf" class="Dwarf">
+              <constructor-arg index="0" value="500"/>
+              <constructor-arg index="1" value="Balin"/>
+              <constructor-arg index="2" value="1540"/>
+              <constructor-arg index="3" ref="weapon"/>
+       </bean>
+       <bean id="halfBreed" class="HalfBreed">
+              <constructor-arg index="0" value="Hermione"/>
+              <constructor-arg index="1" value="600"/>
+       </bean>
+       <bean id="orc" class="Orc">
+              <constructor-arg index="0" value="Shrek"/>
+              <constructor-arg index="1" value="500"/>
+              <constructor-arg index="2" value="200"/>
+              <constructor-arg index="3" value="green"/>
+       </bean>
+       <bean id="potion" class="Potion"></bean>
+       <bean id="elf" class="LightElf">
+              <constructor-arg index="0" value="Galadriel"/>
+              <constructor-arg index="1" value="6000"/>
+              <constructor-arg index="2" ref="eagle"/>
+              <constructor-arg index="3" value="1500"/>
+       </bean>
+</beans>

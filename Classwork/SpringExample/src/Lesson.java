@@ -4,6 +4,10 @@
 public class Lesson {
     private String name;
 
+    public Lesson(String s) {
+        this.name=s;
+    }
+
     public String getName() {
         return name;
     }
