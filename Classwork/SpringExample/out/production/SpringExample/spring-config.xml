@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="KFU" class="Institute">
+              <constructor-arg value="KFU"></constructor-arg>
+       </bean>
+       <bean id="KAI" class="Institute">
+              <constructor-arg value="KAI"></constructor-arg>
+       </bean>
+
+       <bean id = "Programming" class="Lesson">
+              <constructor-arg value="Programming"></constructor-arg>
+       </bean>
+       <bean id = "Maths" class="Lesson">
+              <constructor-arg value="Math"></constructor-arg>
+       </bean>
+       <bean id="DB" class="Lesson">
+              <constructor-arg value="DataBases"></constructor-arg>
+       </bean>
+       <bean id="English" class="Lesson">
+              <constructor-arg value="English"></constructor-arg>
+       </bean>
+       <bean id="Student1" class="Student" >
+              <constructor-arg value="Roman"></constructor-arg>
+              <constructor-arg ref="KFU"></constructor-arg>
+              <property name="lessons">
+                     <list>
+                            <ref bean="DB"></ref>
+                            <ref bean="English"></ref>
+                            <ref bean="Programming"></ref>
+                     </list>
+              </property>
+              <property name="shedule" >
+                     <map>
+                            <entry key="1" value-ref="Programming"></entry>
+                            <entry key="2" value-ref="DB"></entry>
+                     </map>
+
+              </property>
+       </bean>
+       <bean id="Student2" class="Student" >
+              <constructor-arg value="Zahar"></constructor-arg>
+              <constructor-arg ref="KAI"></constructor-arg>
+              <property name="lessons">
+                     <list>
+                            <ref bean="Programming"></ref>
+                            <ref bean="Maths"></ref>
+                     </list>
+              </property>
+
+       </bean>
+       <bean id="Teacher1" class="Teacher" factory-method="newTeacher">
+              <constructor-arg  type="java.lang.String" value="Katz"/>
+              <constructor-arg  type="Lesson" ref="Maths"/>
+       </bean>
+       <bean id="Homework1" class="ProgrammingHomeWork" factory-method="newProgrammingHomework"></bean>
+
+
+</beans>
