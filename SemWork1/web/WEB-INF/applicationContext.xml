@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security
+         http://www.springframework.org/schema/security/spring-security.xsd">
+       <security:http auto-config="true" use-expressions="true">
+              <security:intercept-url pattern="/main*" access="ROLE_ADMIN" />
+              <security:form-login login-page="/signin" default-target-url="/main"
+                                   authentication-failure-url="/loginError"/>
+           <security:intercept-url
+                   pattern="/admin/**"
+                   access="hasRole('ROLE_ADMIN')"
+                   />
+           <security:intercept-url pattern="/signin"
+                                   access="permitAll()" />
+           <security:intercept-url pattern="/taxist/**"
+                                   access="hasRole('ROLE_TAXIST')" />
+       </security:http>
+
+       <security:authentication-manager>
+              <security:authentication-provider>
+
+                  <security:password-encoder hash="sha"/>
+                  <security:user-service>
+                      <security:user name="jimi"
+                            password="d033e22ae348aeb5660fc2140aec35850c4da997"
+                            authorities="ROLE_USER, ROLE_ADMIN" />
+
+                  </security:user-service>
+                  <security:password-encoder hash="sha">
+                      <security:salt-source user-property="username"/>
+                  </security:password-encoder>
+
+              </security:authentication-provider>
+
+       </security:authentication-manager>
+
+
+
+</beans>
